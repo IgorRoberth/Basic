@@ -13,14 +13,14 @@ public class Teste {
 	@Test
 	public void abrirNavegador() {
 		
-        /*Comunicação do selenium com o webdriver para abrir o navegador
-         * Versão do driver 111.0.5563.64 talvez seja necessário atualizar
-         * dependencias utilizadas junit test e selenium-java
+        /*ComunicaÃ§Ã£o do selenium com o webdriver para abrir o navegador
+         * VersÃ£o do driver 111.0.5563.64 talvez seja necessÃ¡rio atualizar o chromedriver.
+         * dependencias utilizadas sÃ£o junit test e selenium-java
          */
 		System.setProperty("webdriver.chrome.driver", "./Driver/chromedriver.exe");
 		ChromeOptions options = new ChromeOptions();
 		
-		//Código para permitir que qualquer origem externa faça solicitações ao navegador controlado remotamente, sem restrições.
+		//CÃ³digo para permitir que qualquer origem externa faÃ§a solicitaÃ§Ãµes ao navegador controlado remotamente, sem restriÃ§Ãµes.
 		options.addArguments("-remote-allow-origins=*");
 		WebDriver driver = new ChromeDriver(options);
         
@@ -30,23 +30,23 @@ public class Teste {
 		//Linha para maximizar a tela do navegador
 		driver.manage().window().maximize();
         
-		//Linha para interagir com partes do site que você deseja escrever 
+		//Linha para interagir com partes do site que vocÃª deseja escrever 
 		driver.findElement(By.id("")).sendKeys("");
 		
-		//Linha que irá realizar o clique em botões de pesquisas
+		//Linha que irÃ¡ realizar o clique em botÃµes de pesquisas
 		driver.findElement(By.cssSelector("")).submit();
 		
-        //Linha de código para rodar a página para baixo e interagir com produto desejado 
+        //Linha de cÃ³digo para rodar a pÃ¡gina para baixo e interagir com produto desejado 
 		JavascriptExecutor js = (JavascriptExecutor) driver;
 		js.executeScript("window.scrollBy(0,250)");
 		
 		//Linha para clicar no local desejado
 		driver.findElement(By.xpath("")).click();
 		
-		//Assert para validar se o produto selecionado é o que você interagiu
+		//Assert para validar se o produto selecionado Ã© o que vocÃª interagiu
 	    assertEquals("Resultado Esperado", "Resultado Atual");
 
-	    //Linha para fechar o navegador após finalização de todas as validações desejadas
+	    //Linha para fechar o navegador apÃ³s finalizaÃ§Ã£o de todas as validaÃ§Ãµes desejadas
 		driver.quit();
 
 	}
