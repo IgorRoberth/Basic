@@ -36,7 +36,7 @@ public class Teste {
 		//Linha que irá realizar o clique em botões de pesquisas
 		driver.findElement(By.cssSelector("")).submit();
 		
-        //Linha de código para rodar a página para baixo e interagir com produto desejado 
+                //Linha de código para rodar a página para baixo e interagir com produto desejado 
 		JavascriptExecutor js = (JavascriptExecutor) driver;
 		js.executeScript("window.scrollBy(0,250)");
 		
@@ -44,9 +44,9 @@ public class Teste {
 		driver.findElement(By.xpath("")).click();
 		
 		//Assert para validar se o produto selecionado é o que você interagiu
-	    assertEquals("Resultado Esperado", "Resultado Atual");
+	        assertEquals("Resultado Esperado", "Resultado Atual");
 
-	    //Linha para fechar o navegador após finalização de todas as validações desejadas
+	        //Linha para fechar o navegador após finalização de todas as validações desejadas
 		driver.quit();
 
 	}
